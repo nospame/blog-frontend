@@ -1,9 +1,8 @@
 <script>
-import axios from 'axios'
 export default {
   data: function () {
     return {
-      message: "Welcome to Home View",
+      message: "Welcome to posts page",
     };
   },
   created: function () { },
@@ -12,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <div class="home">
+  <div class="posts">
     <h1>{{ message }}</h1>
   </div>
 </template>
