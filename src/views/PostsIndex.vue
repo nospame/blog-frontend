@@ -26,7 +26,9 @@ export default {
   <div class="posts-index">
     <h1>{{ message }}</h1>
     <div v-for="post in posts">
-      <h2>{{ post.title }}</h2>
+      <h2>
+        <router-link v-bind:to="`/posts/${post.id}`">{{ post.title }}</router-link>
+      </h2>
       <img v-bind:src="post.image" />
       <p>{{ post.body }}</p>
       <hr />

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PostsIndex from '../views/PostsIndex.vue'
 import PostsNew from '../views/PostsNew.vue'
+import PostShow from '../views/PostShow.vue'
 import UserSignup from '../views/UserSignup.vue'
 import UserLogin from '../views/UserLogin.vue'
 import UserLogout from '../views/UserLogout.vue'
@@ -29,6 +30,11 @@ const routes = [
     path: '/posts/new',
     name: 'posts-new',
     component: PostsNew
+  },
+  {
+    path: '/posts/:id',
+    name: 'post-show',
+    component: PostShow
   },
   {
     path: '/signup',
