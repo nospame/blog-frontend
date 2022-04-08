@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PostsView from '../views/PostsView.vue'
+import PostsIndex from '../views/PostsIndex.vue'
+import PostsNew from '../views/PostsNew.vue'
 import UserSignup from '../views/UserSignup.vue'
 import UserLogin from '../views/UserLogin.vue'
 import UserLogout from '../views/UserLogout.vue'
@@ -21,8 +22,13 @@ const routes = [
   },
   {
     path: '/posts',
-    name: 'posts',
-    component: PostsView
+    name: 'posts-index',
+    component: PostsIndex
+  },
+  {
+    path: '/posts/new',
+    name: 'posts-new',
+    component: PostsNew
   },
   {
     path: '/signup',
