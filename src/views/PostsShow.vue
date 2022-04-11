@@ -31,16 +31,26 @@ export default {
 
 <template>
   <div class="posts-show">
-    <h1>{{ post.title }}</h1>
-    <img v-bind:src="post.image" />
-    <p>{{ post.body }}</p>
-    <p>
-      <router-link v-bind:to="`/posts/${$route.params.id}/edit`">Edit Post</router-link>&nbsp;|
-      <router-link to="/posts">All Posts</router-link>
-    </p>
-    <p>
-      <button v-on:click="destroyPost()">Delete Post</button>
-    </p>
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img v-bind:src="post.image" class="img-fluid rounded-start" v-bind:alt="post.title" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-text">{{ post.body }}</p>
+
+            <router-link
+              v-bind:to="`/posts/${$route.params.id}/edit`"
+              class="btn btn-primary mx-1"
+            >Edit Post</router-link>
+            <router-link to="/posts" class="btn btn-primary mx-1">All Posts</router-link>
+            <button v-on:click="destroyPost()" class="btn btn-danger mx-1">Delete Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
