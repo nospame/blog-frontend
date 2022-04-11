@@ -10,7 +10,7 @@ export default {
     };
   },
   created: function () {
-    this.postShow();
+    this.showPost();
   },
   methods: {
     submit: function () {
@@ -26,7 +26,7 @@ export default {
           }
         )
     },
-    postShow: function () {
+    showPost: function () {
       axios.get(`/posts/${this.$route.params.id}`)
         .then(response => {
           console.log(response.data);

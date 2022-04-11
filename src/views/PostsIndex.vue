@@ -8,10 +8,10 @@ export default {
     };
   },
   created: function () {
-    this.postsIndex();
+    this.indexPosts();
   },
   methods: {
-    postsIndex: function () {
+    indexPosts: function () {
       axios.get('/posts')
         .then(response => {
           console.log(response.data);
@@ -36,8 +36,4 @@ export default {
   </div>
 </template>
 
-<style>
-img {
-  max-width: 85%;
-}
-</style>
+<style></style>
