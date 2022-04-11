@@ -28,6 +28,7 @@ export default {
     <img v-bind:src="post.image" />
     <p>{{ post.body }}</p>
     <p>
+      <router-link v-bind:to="`/posts/${$route.params.id}/edit`">Edit Post</router-link>&nbsp;|
       <router-link to="/posts">All Posts</router-link>
     </p>
   </div>

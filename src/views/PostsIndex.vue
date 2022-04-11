@@ -36,4 +36,8 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style>
+img {
+  max-width: 85%;
+}
+</style>
