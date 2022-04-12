@@ -3,15 +3,8 @@
     <div class="container-fluid">
       <router-link class="navbar-brand" to="/posts">Blog Posts</router-link>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -22,14 +15,8 @@
               <router-link to="/posts/new" class="nav-link">New Post</router-link>
             </li>
             <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >Sign Up</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Sign Up</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <router-link to="/signup" class="dropdown-item">Sign Up</router-link>
@@ -58,4 +45,7 @@
 </template>
 
 <style>
+body {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif
+}
 </style>
