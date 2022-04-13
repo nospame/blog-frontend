@@ -4,7 +4,11 @@ export default {
   data: function () {
     return {
       message: "Create a New Post",
-      newPostParams: {},
+      newPostParams: {
+        title: '',
+        body: '',
+        image: ''
+      },
       errors: []
     };
   },
@@ -42,15 +46,21 @@ export default {
         <div>
           <label>Body:</label>
           <input type="text" v-model="newPostParams.body" />
+          <p v-if="newPostParams.body.length <= 200" class="text-secondary">{{ 200 - newPostParams.body.length }}
+            characters remaining</p>
+          <p v-if="newPostParams.body.length > 200" class="text-danger">{{ newPostParams.body.length - 200 }}
+            characters
+            too long</p>
         </div>
         <div>
           <label>Image URL:</label>
           <input type="text" v-model="newPostParams.image" />
         </div>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" class="btn btn-primary" />
       </form>
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+</style>

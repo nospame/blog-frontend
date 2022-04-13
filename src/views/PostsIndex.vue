@@ -25,8 +25,8 @@ export default {
 <template>
   <div class="posts-index">
     <h1>{{ message }}</h1>
-    <div class="row">
-      <div class="col-6" v-for="post in posts">
+    <div class="row justify-content-center">
+      <div style="width: 85%; max-width: 32rem" v-for="post in posts">
         <div class="card mb-3">
           <img v-bind:src="post.image" class="card-img-top" alt="post.title">
           <div class="card-body">

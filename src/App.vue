@@ -1,3 +1,18 @@
+<script>
+export default {
+  data: function () {
+    return {
+      isLoggedIn: false,
+    }
+  },
+  watch: {
+    $route: function () {
+      this.isLoggedIn = !!localStorage.jwt;
+    }
+  }
+}
+</script>
+
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
     <div class="container-fluid">
@@ -16,21 +31,24 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Sign Up</a>
+                aria-expanded="false">User</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <router-link to="/signup" class="dropdown-item">Sign Up</router-link>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <router-link to="/login" class="dropdown-item">Log In</router-link>
-                </li>
-
-                <li>
-                  <router-link to="/logout" class="dropdown-item">Log Out</router-link>
-                </li>
+                <div v-if="!isLoggedIn">
+                  <li>
+                    <router-link to="/signup" class="dropdown-item">Sign Up</router-link>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <router-link to="/login" class="dropdown-item">Log In</router-link>
+                  </li>
+                </div>
+                <div v-if="isLoggedIn">
+                  <li>
+                    <router-link to="/logout" class="dropdown-item">Log Out</router-link>
+                  </li>
+                </div>
               </ul>
             </li>
           </ul>
@@ -46,6 +64,6 @@
 
 <style>
 body {
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 </style>
