@@ -12,14 +12,14 @@ export default {
   },
   methods: {
     showPost: function () {
-      axios.get(`/posts/${this.$route.params.id}`)
+      axios.get(`/posts/${this.$route.params.id}.json`)
         .then(response => {
           console.log(response.data);
           this.post = response.data;
         })
     },
     destroyPost: function () {
-      axios.delete(`/posts/${this.$route.params.id}`)
+      axios.delete(`/posts/${this.$route.params.id}.json`)
         .then(response => {
           console.log(response.data);
           this.$router.push('/posts')
@@ -40,13 +40,13 @@ export default {
           <div class="card-body">
             <h2 class="card-title">{{ post.title }}</h2>
             <p class="card-text">{{ post.body }}</p>
+            <div>
+              <router-link v-bind:to="`/posts/${$route.params.id}/edit`" class="btn btn-primary mx-1 my-1">Edit Post
+              </router-link>
+              <button v-on:click="destroyPost()" class="btn btn-danger mx-1 my-1">Delete Post</button>
+            </div>
 
-            <router-link
-              v-bind:to="`/posts/${$route.params.id}/edit`"
-              class="btn btn-primary mx-1"
-            >Edit Post</router-link>
-            <router-link to="/posts" class="btn btn-primary mx-1">All Posts</router-link>
-            <button v-on:click="destroyPost()" class="btn btn-danger mx-1">Delete Post</button>
+            <router-link to="/posts" class="btn btn-primary mx-1 my-1">All Posts</router-link>
           </div>
         </div>
       </div>
@@ -54,4 +54,5 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style>
+</style>
